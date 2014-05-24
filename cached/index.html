@@ -1,0 +1,4982 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Playtime For The Buck</title>
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="/assets/app-d3def7b7b00657eb82fce72c889be641.css">
+<link rel="shortcut icon" href="/assets/favicon-963b73988908a1866e05de9070678d37.ico">
+</head>
+<body>
+      <main class="main"><header class="header"><h1 class="title">
+            <a href="/" class="logo">Playtime For The Buck</a>
+          </h1>
+          <small class="subtitle" title="I'm not good with slogans">
+            <em>It ended up being a little more than playtime for the buck: it kind of let you discover games™</em>
+          </small>
+
+          <div class="dev-info">
+            The whole thing is open source!<br><a href="http://github.com/Zequez/PlayTimeForTheBuck.com" title='By "me" I mean the project! I forbid you from making a clone of my consciousness!'>Fork me on Github</a> (or just awe at its <em>majesty</em>!)<br><a href="http://www.reddit.com/message/compose/?to=Zequez" title="No dick pics!">Message me on Reddit!</a><br>
+            Made by <a href="http://zequez.com" title="In Spanish AND English! Old things are mostly Spanish!">Zequez</a> with love and a keyboard
+          </div>
+
+          <div class="donate">
+            <img class="bitcoin-qr"><p class="donate-title">
+              <span class="bitcoin-title">← Bitcoins tips ↓</span>
+              <span class="flattr-title">
+                <a href="https://flattr.com/submit/auto?user_id=Zequez&amp;url=http%3A%2F%2Fplaytimeforthebuck.com" target="_blank">
+                  Flattr tips
+                </a>
+              </span>
+              <span class="steam-title">
+                <a href="">Steam tips</a>
+              </span>
+              <span class="reddit-title">
+                <a href="" title="Just the tip">Reddit tips</a>
+              </span>
+              <span class="steam-title">
+                <a href="/assets/pencil-tips-03aee7f9bafdf933545c485c34f9796d.jpg">Pencil tips</a>
+              </span>
+            </p>
+            <p class="bitcoin-message">All the money goes to coffee!</p>
+            <p class="bitcoin-address">1JAdP95kEYg8ugAAeUQS1UJKwCdU31hJGP</p>
+          </div>
+        </header><table class="table">
+<thead>
+<tr sorters-container class="header-titles">
+<th sort="lowerName" class="ascending">Name</th>
+              <th sort="tagsRating" title="Add some tags for this sorting to work">Tags</th>
+              <th sort="launchDateSince">Launch date</th>
+              <th sort="finalPrice">Price</th>
+              <th sort="average_time">Playtime</th>
+              <th sort="max_time" class="hidden">Maximum playtime</th>
+              <th sort="min_time" class="hidden">Minimum playtime</th>
+              <th sort="average_time_positive" class="hidden">Positive playtime</th>
+              <th sort="average_time_negative" class="hidden">Negative playtime</th>
+              <th sort="averageTimeOverPrice">Playtime/Buck</th>
+              <th sort="positive_reviews" class="hidden">Positive reviews</th>
+              <th sort="negative_reviews" class="hidden">Negative reviews</th>
+              <th sort="totalReviews">Total reviews</th>
+              <th sort="meta_score">Metascore</th>
+              <th sort="positiveReviewsPercentage">Reviews distribution</th>
+              <th sort="playtimeDeviationPercentage" title="1 guy plays 1 hour and 1 guy plays 999 hours, averages 500 hours: high disparity.2 guys play 500 hours, average 500 hours: low disparity. ">Playtime disparity [?]</th>
+            </tr>
+<tr filters-container class="header-filters">
+<th filter="name" text-filter></th>
+              <th filter="categoris" array-filter></th>
+              <th filter="launchDateSince" date-filter filter-options="&gt;0d Not ???,1d,1w,1m,3m,6m,1y,2y,3y,5y,10y,15y,20y"></th>
+              <th filter="finalPrice" number-filter filter-options="0 Free,&gt;0 Not Free,1,3,5,10,15,20,30,40,50,70,100"></th>
+              <th filter="average_time" number-filter filter-options="0 -,&gt;0,1,3,5,10,15,20,30,40,50,70,100"></th>
+              <th filter="max_time" number-filter class="hidden" filter-options="10,20,50,100,200,300,500,700,900,1200"></th>
+              <th filter="min_time" number-filter class="hidden" filter-options="1,2,3,4,5,6,7,8,9,10"></th>
+              <th filter="average_time_positive" number-filter class="hidden" filter-options="0,1,3,5,10,15,20,30,40,50,70,100"></th>
+              <th filter="average_time_negative" number-filter class="hidden" filter-options="0,1,3,5,10,15,20,30,40,50,70,100"></th>
+              <th filter="averageTimeOverPrice" number-filter filter-options="1,2,3,4,5,6,7,8,9,10,12,14,16,18,20"></th>
+              <th filter="positive_reviews" number-filter class="hidden" filter-options="0,1,5,10,50,100,200,300,500,750,1000"></th>
+              <th filter="negative_reviews" number-filter class="hidden" filter-options="0,1,5,10,50,100,200,300,500,750,1000"></th>
+              <th filter="totalReviews" number-filter filter-options="0,1,5,10,50,100,200,300,500,750,1000"></th>
+              <th filter="meta_score" number-filter filter-options="* -,0,10,20,30,40,50,60,70,80,90,100"></th>
+              <th filter="positiveReviewsPercentage" number-filter filter-options="* -,0 0%,10 10%,20 20%,30 30%,40 40%,50 50%,60 60%,70 70%,80 80%,90 90%,100 100%"></th>
+              <th filter="playtimeDeviationPercentage" number-filter filter-options="* -,0,1,2,3,4,5,6,7,8,9,10"></th>
+              
+            </tr>
+</thead>
+<tbody games-container>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/270090">//N.P.P.D. RUSH//- The milk of Ultraviolet</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Bullet Hell</span>
+      
+        <span class="tag">Illuminati</span>
+      
+        <span class="tag">Shooter</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Surreal</span>
+      
+        <span class="tag">Retro</span>
+      
+        <span class="tag">Acid</span>
+      
+        <span class="tag">Action RPG</span>
+      
+    </div>
+  </td>
+  <td>3 months ago </td>
+  <td>
+    
+      $3.99
+    
+  </td>
+  <td>1.37 hours</td>
+  <td class="hidden">16.2 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">0.72 hours</td>
+  <td class="hidden">2.41 hours</td>
+  <td>0.34 hours/$</td>
+  <td class="hidden">13</td>
+  <td class="hidden">8</td>
+  <td>21</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 61%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.65
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/278440">0RBITALIS</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Simulation</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $6.99
+    
+  </td>
+  <td>2.95 hours</td>
+  <td class="hidden">10.2 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">3.09 hours</td>
+  <td class="hidden">1.2 hours</td>
+  <td>0.42 hours/$</td>
+  <td class="hidden">12</td>
+  <td class="hidden">1</td>
+  <td>13</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 92%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.35
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/15540">1... 2... 3... KICK IT! (Drop That Beat Like an Ugly Baby)</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Music</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Rhythm</span>
+      
+        <span class="tag">Procedural</span>
+      
+        <span class="tag">Falling</span>
+      
+        <span class="tag">First-Person Perspective</span>
+      
+        <span class="tag">Potato Sack</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">Dejobaan</span>
+      
+    </div>
+  </td>
+  <td>??? </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>4.23 hours</td>
+  <td class="hidden">28.8 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.22 hours</td>
+  <td class="hidden">2.93 hours</td>
+  <td>0.42 hours/$</td>
+  <td class="hidden">87</td>
+  <td class="hidden">67</td>
+  <td>154</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 56%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.65
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/271670">10 Second Ninja</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Fast Paced</span>
+      
+        <span class="tag">Ninja</span>
+      
+        <span class="tag">Puzzle</span>
+      
+    </div>
+  </td>
+  <td>2 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>5.55 hours</td>
+  <td class="hidden">38.1 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.77 hours</td>
+  <td class="hidden">1.55 hours</td>
+  <td>0.56 hours/$</td>
+  <td class="hidden">70</td>
+  <td class="hidden">4</td>
+  <td>74</td>
+  <td>70</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 94%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.47
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/227580">10,000,000</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Match 3</span>
+      
+        <span class="tag">Puzzle RPG</span>
+      
+        <span class="tag">Mouse only</span>
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Puzzle</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Retro</span>
+      
+        <span class="tag">Pixel Graphics</span>
+      
+        <span class="tag">Upgrades</span>
+      
+    </div>
+  </td>
+  <td>1.4 years ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>9.01 hours</td>
+  <td class="hidden">79 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">9.52 hours</td>
+  <td class="hidden">5.6 hours</td>
+  <td>1.81 hours/$</td>
+  <td class="hidden">378</td>
+  <td class="hidden">56</td>
+  <td>434</td>
+  <td>67</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 87%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.39
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/205690">1000 Amps</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Puzzle</span>
+      
+        <span class="tag">Metroidvania</span>
+      
+    </div>
+  </td>
+  <td>2.3 years ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>5.4 hours</td>
+  <td class="hidden">24.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.92 hours</td>
+  <td class="hidden">1 hours</td>
+  <td>1.08 hours/$</td>
+  <td class="hidden">59</td>
+  <td class="hidden">7</td>
+  <td>66</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 89%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.25
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/242820">140</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Rhythm</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Minimalist</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Music</span>
+      
+        <span class="tag">Short</span>
+      
+        <span class="tag">Great Soundtrack</span>
+      
+        <span class="tag">Precision platformer</span>
+      
+        <span class="tag">Challenging</span>
+      
+    </div>
+  </td>
+  <td>7 months ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>3.04 hours</td>
+  <td class="hidden">38.6 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">3.09 hours</td>
+  <td class="hidden">1.58 hours</td>
+  <td>0.61 hours/$</td>
+  <td class="hidden">380</td>
+  <td class="hidden">13</td>
+  <td>393</td>
+  <td>80</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 96%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.57
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/12520">18 Wheels of Steel: American Long Haul</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Racing</span>
+      
+        <span class="tag">Simulation</span>
+      
+    </div>
+  </td>
+  <td>6.3 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>16.61 hours</td>
+  <td class="hidden">235.6 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">21.38 hours</td>
+  <td class="hidden">6.54 hours</td>
+  <td>1.66 hours/$</td>
+  <td class="hidden">38</td>
+  <td class="hidden">18</td>
+  <td>56</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 67%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.9
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/33730">18 Wheels of Steel: Extreme Trucker</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+    </div>
+  </td>
+  <td>??? </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>5.37 hours</td>
+  <td class="hidden">19.8 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">4.85 hours</td>
+  <td class="hidden">7.47 hours</td>
+  <td>0.27 hours/$</td>
+  <td class="hidden">12</td>
+  <td class="hidden">3</td>
+  <td>15</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 80%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.51
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/248490">1953 - KGB Unleashed</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Point &amp; Click</span>
+      
+        <span class="tag">First-Person</span>
+      
+        <span class="tag">Horror</span>
+      
+    </div>
+  </td>
+  <td>8 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>3.5 hours</td>
+  <td class="hidden">37.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">4.47 hours</td>
+  <td class="hidden">2.67 hours</td>
+  <td>0.35 hours/$</td>
+  <td class="hidden">35</td>
+  <td class="hidden">41</td>
+  <td>76</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 46%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.68
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/255280">1954 Alcatraz</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Point &amp; Click</span>
+      
+    </div>
+  </td>
+  <td>2 months ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>6.05 hours</td>
+  <td class="hidden">9.1 hours</td>
+  <td class="hidden">2.4 hours</td>
+  <td class="hidden">5.79 hours</td>
+  <td class="hidden">6.9 hours</td>
+  <td>0.3 hours/$</td>
+  <td class="hidden">10</td>
+  <td class="hidden">3</td>
+  <td>13</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 76%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.05
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/278530">3 Stars of Destiny</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">RPGMaker</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">JRPG</span>
+      
+        <span class="tag">Anime</span>
+      
+        <span class="tag">Kawaii</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>14.95 hours</td>
+  <td class="hidden">52.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">16.33 hours</td>
+  <td class="hidden">1.1 hours</td>
+  <td>1 hours/$</td>
+  <td class="hidden">10</td>
+  <td class="hidden">1</td>
+  <td>11</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 90%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.63
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/259620">3079 -- Block Action RPG</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">FPS</span>
+      
+        <span class="tag">Open World</span>
+      
+    </div>
+  </td>
+  <td>6 months ago </td>
+  <td>
+    
+      $6.99
+    
+  </td>
+  <td>3.87 hours</td>
+  <td class="hidden">28 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.22 hours</td>
+  <td class="hidden">1.96 hours</td>
+  <td>0.55 hours/$</td>
+  <td class="hidden">76</td>
+  <td class="hidden">54</td>
+  <td>130</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 58%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.54
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/263360">3089 -- Futuristic Action RPG</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Open World</span>
+      
+        <span class="tag">FPS</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">Sci-fi</span>
+      
+        <span class="tag">Steam Trading Cards</span>
+      
+    </div>
+  </td>
+  <td>4 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>8.17 hours</td>
+  <td class="hidden">43.9 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">9.33 hours</td>
+  <td class="hidden">2.14 hours</td>
+  <td>0.82 hours/$</td>
+  <td class="hidden">157</td>
+  <td class="hidden">30</td>
+  <td>187</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 83%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.45
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/10140">3D Ultra™ Minigolf Adventures</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Sports</span>
+      
+        <span class="tag">Golf</span>
+      
+    </div>
+  </td>
+  <td>4.8 years ago </td>
+  <td>
+    
+      <span class="strike">$9.99</span> $4.99
+    
+  </td>
+  <td>6.22 hours</td>
+  <td class="hidden">27.9 hours</td>
+  <td class="hidden">0.6 hours</td>
+  <td class="hidden">9.83 hours</td>
+  <td class="hidden">0.8 hours</td>
+  <td>1.25 hours/$</td>
+  <td class="hidden">3</td>
+  <td class="hidden">2</td>
+  <td>5</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 60%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/206610">3SwitcheD</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Match 3</span>
+      
+        <span class="tag">Puzzle</span>
+      
+    </div>
+  </td>
+  <td>2.2 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>2.1 hours</td>
+  <td class="hidden">34.4 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">4.19 hours</td>
+  <td class="hidden">0.89 hours</td>
+  <td>0.21 hours/$</td>
+  <td class="hidden">11</td>
+  <td class="hidden">19</td>
+  <td>30</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 36%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    2.06
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/47000">4 Elements</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Puzzle</span>
+      
+        <span class="tag">Match 3</span>
+      
+        <span class="tag">Hidden Object</span>
+      
+    </div>
+  </td>
+  <td>3.9 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>13.61 hours</td>
+  <td class="hidden">158.2 hours</td>
+  <td class="hidden">0.5 hours</td>
+  <td class="hidden">14.39 hours</td>
+  <td class="hidden">7.45 hours</td>
+  <td>1.36 hours/$</td>
+  <td class="hidden">63</td>
+  <td class="hidden">8</td>
+  <td>71</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 88%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.8
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/2900">688(I) Hunter/Killer</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Simulation</span>
+      
+    </div>
+  </td>
+  <td>7.6 years ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>12.54 hours</td>
+  <td class="hidden">55.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">16.86 hours</td>
+  <td class="hidden">1.75 hours</td>
+  <td>0.63 hours/$</td>
+  <td class="hidden">5</td>
+  <td class="hidden">2</td>
+  <td>7</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 71%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.78
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/251570">7 Days to Die</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Survival</span>
+      
+        <span class="tag">Zombies</span>
+      
+        <span class="tag">Crafting</span>
+      
+        <span class="tag">Open World</span>
+      
+        <span class="tag">Sandbox</span>
+      
+        <span class="tag">Zombie Survivial</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Building</span>
+      
+        <span class="tag">Co-op</span>
+      
+        <span class="tag">Survival Simulation</span>
+      
+    </div>
+  </td>
+  <td>5 months ago </td>
+  <td>
+    
+      $24.99
+    
+  </td>
+  <td>58.08 hours</td>
+  <td class="hidden">745 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">58.35 hours</td>
+  <td class="hidden">20.7 hours</td>
+  <td>2.32 hours/$</td>
+  <td class="hidden">993</td>
+  <td class="hidden">7</td>
+  <td>1000+</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 99%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.77
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/238930">7 Grand Steps: What Ancients Begat</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Boardgame</span>
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Unique</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">Steam Trading Cards</span>
+      
+        <span class="tag">Historical</span>
+      
+        <span class="tag">Turn-based</span>
+      
+    </div>
+  </td>
+  <td>11 months ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>10.88 hours</td>
+  <td class="hidden">81.4 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">13.48 hours</td>
+  <td class="hidden">4.14 hours</td>
+  <td>0.54 hours/$</td>
+  <td class="hidden">96</td>
+  <td class="hidden">37</td>
+  <td>133</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 72%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.49
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/15900">7 Wonders II</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Puzzle</span>
+      
+        <span class="tag">Match 3</span>
+      
+        <span class="tag">Casual</span>
+      
+    </div>
+  </td>
+  <td>6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>8.93 hours</td>
+  <td class="hidden">56.8 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">13.8 hours</td>
+  <td class="hidden">2.43 hours</td>
+  <td>0.89 hours/$</td>
+  <td class="hidden">8</td>
+  <td class="hidden">6</td>
+  <td>14</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 57%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.99
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/275810">7 Wonders of the Ancient World</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Puzzle</span>
+      
+        <span class="tag">Match 3</span>
+      
+    </div>
+  </td>
+  <td>3 months ago </td>
+  <td>
+    
+      $6.99
+    
+  </td>
+  <td>4.2 hours</td>
+  <td class="hidden">4.2 hours</td>
+  <td class="hidden">4.2 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">4.2 hours</td>
+  <td>0.6 hours/$</td>
+  <td class="hidden">0</td>
+  <td class="hidden">1</td>
+  <td>1</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 0%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/223000">7 Wonders: Ancient Alien Makeover</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Puzzle</span>
+      
+        <span class="tag">Match 3</span>
+      
+    </div>
+  </td>
+  <td>1.6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>11.59 hours</td>
+  <td class="hidden">28.2 hours</td>
+  <td class="hidden">1 hours</td>
+  <td class="hidden">11.59 hours</td>
+  <td class="hidden">11.55 hours</td>
+  <td>1.16 hours/$</td>
+  <td class="hidden">19</td>
+  <td class="hidden">2</td>
+  <td>21</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 90%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.21
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/275830">7 Wonders: Magical Mystery Tour</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Match 3</span>
+      
+        <span class="tag">Puzzle</span>
+      
+    </div>
+  </td>
+  <td>3 months ago </td>
+  <td>
+    
+      $6.99
+    
+  </td>
+  <td>11.4 hours</td>
+  <td class="hidden">11.4 hours</td>
+  <td class="hidden">11.4 hours</td>
+  <td class="hidden">11.4 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>1.63 hours/$</td>
+  <td class="hidden">1</td>
+  <td class="hidden">0</td>
+  <td>1</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 100%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/16030">7 Wonders: Treasures of Seven</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Match 3</span>
+      
+        <span class="tag">Casual</span>
+      
+    </div>
+  </td>
+  <td>5.5 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>5.9 hours</td>
+  <td class="hidden">9.2 hours</td>
+  <td class="hidden">0.5 hours</td>
+  <td class="hidden">5.9 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>0.59 hours/$</td>
+  <td class="hidden">5</td>
+  <td class="hidden">0</td>
+  <td>5</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 100%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.16
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/250420">8BitMMO</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Massively Multiplayer</span>
+      
+        <span class="tag">Free to Play</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Sandbox</span>
+      
+        <span class="tag">8-bit</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Building</span>
+      
+        <span class="tag">Retro</span>
+      
+    </div>
+  </td>
+  <td>5 months ago </td>
+  <td>
+    
+      Free
+    
+  </td>
+  <td>6.46 hours</td>
+  <td class="hidden">442.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">9.06 hours</td>
+  <td class="hidden">1.45 hours</td>
+  <td>N/A</td>
+  <td class="hidden">658</td>
+  <td class="hidden">342</td>
+  <td>1000+</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 65%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    3.96
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/263100">9.03m</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Short</span>
+      
+        <span class="tag">Art</span>
+      
+        <span class="tag">Emotional</span>
+      
+        <span class="tag">Exploration</span>
+      
+        <span class="tag">charity</span>
+      
+        <span class="tag">Interactive Story</span>
+      
+        <span class="tag">Walking Simulator</span>
+      
+    </div>
+  </td>
+  <td>6 months ago </td>
+  <td>
+    
+      $1.99
+    
+  </td>
+  <td>0.58 hours</td>
+  <td class="hidden">52.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">0.64 hours</td>
+  <td class="hidden">0.28 hours</td>
+  <td>0.29 hours/$</td>
+  <td class="hidden">237</td>
+  <td class="hidden">46</td>
+  <td>283</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 83%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    4.51
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/264280">99 Levels To Hell</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Rogue-like</span>
+      
+        <span class="tag">Rogue-lite</span>
+      
+        <span class="tag">Procedural Death Labyrinth</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+    </div>
+  </td>
+  <td>3 months ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>2.38 hours</td>
+  <td class="hidden">15.8 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">3.41 hours</td>
+  <td class="hidden">1.38 hours</td>
+  <td>0.48 hours/$</td>
+  <td class="hidden">28</td>
+  <td class="hidden">29</td>
+  <td>57</td>
+  <td>66</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 49%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.75
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/258090">99 Spirits</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Japanese</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">JRPG</span>
+      
+        <span class="tag">Female Protagonist</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Doujin</span>
+      
+        <span class="tag">Anime Art Style</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Anime</span>
+      
+        <span class="tag">Steam Trading Cards</span>
+      
+    </div>
+  </td>
+  <td>6 months ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>14.1 hours</td>
+  <td class="hidden">54 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">16.89 hours</td>
+  <td class="hidden">7.26 hours</td>
+  <td>0.94 hours/$</td>
+  <td class="hidden">27</td>
+  <td class="hidden">11</td>
+  <td>38</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 71%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.47
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/12480">9th Company: Roots Of Terror</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">RTS</span>
+      
+    </div>
+  </td>
+  <td>4.5 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>25.2 hours</td>
+  <td class="hidden">203.6 hours</td>
+  <td class="hidden">0.3 hours</td>
+  <td class="hidden">39.21 hours</td>
+  <td class="hidden">5.58 hours</td>
+  <td>2.52 hours/$</td>
+  <td class="hidden">7</td>
+  <td class="hidden">5</td>
+  <td>12</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 58%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.39
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/32460">Monkey Island™ 2 Special Edition: LeChuck’s Revenge™</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Point &amp; Click</span>
+      
+        <span class="tag">Comedy</span>
+      
+        <span class="tag">Classic</span>
+      
+        <span class="tag">Pirates</span>
+      
+        <span class="tag">Remake</span>
+      
+        <span class="tag">Masterpiece</span>
+      
+        <span class="tag">LucasArts</span>
+      
+        <span class="tag">Point and Click</span>
+      
+        <span class="tag">Ron Gilbert</span>
+      
+    </div>
+  </td>
+  <td>3.9 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>8.21 hours</td>
+  <td class="hidden">22.6 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">8.14 hours</td>
+  <td class="hidden">11.8 hours</td>
+  <td>0.82 hours/$</td>
+  <td class="hidden">163</td>
+  <td class="hidden">3</td>
+  <td>166</td>
+  <td>87</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 98%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.16
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/200370">A Game of Dwarves</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">City Builder</span>
+      
+        <span class="tag">Fantasy</span>
+      
+        <span class="tag">Dwarves</span>
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Building</span>
+      
+        <span class="tag">Crafting</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+    </div>
+  </td>
+  <td>1.6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>24.25 hours</td>
+  <td class="hidden">325.9 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">32.05 hours</td>
+  <td class="hidden">9.08 hours</td>
+  <td>2.43 hours/$</td>
+  <td class="hidden">74</td>
+  <td class="hidden">38</td>
+  <td>112</td>
+  <td>60</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 66%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.88
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/58550">A Game of Thrones - Genesis</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">RTS</span>
+      
+    </div>
+  </td>
+  <td>2.7 years ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>4.75 hours</td>
+  <td class="hidden">21.7 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">7.7 hours</td>
+  <td class="hidden">3.53 hours</td>
+  <td>0.24 hours/$</td>
+  <td class="hidden">24</td>
+  <td class="hidden">58</td>
+  <td>82</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 29%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.55
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/105000">A New Beginning - Final Cut</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Point &amp; Click</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Sci-fi</span>
+      
+        <span class="tag">Post-apocalyptic</span>
+      
+        <span class="tag">Point and Click</span>
+      
+        <span class="tag">Hand-drawn</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+    </div>
+  </td>
+  <td>1.4 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>13.33 hours</td>
+  <td class="hidden">353.4 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">17.01 hours</td>
+  <td class="hidden">6.72 hours</td>
+  <td>1.33 hours/$</td>
+  <td class="hidden">88</td>
+  <td class="hidden">49</td>
+  <td>137</td>
+  <td>72</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 64%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.47
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/10240">A Stroke of Fate: Operation Valkyrie</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+    </div>
+  </td>
+  <td>2.6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>12.11 hours</td>
+  <td class="hidden">31.7 hours</td>
+  <td class="hidden">0.7 hours</td>
+  <td class="hidden">20.97 hours</td>
+  <td class="hidden">5.48 hours</td>
+  <td>1.21 hours/$</td>
+  <td class="hidden">3</td>
+  <td class="hidden">4</td>
+  <td>7</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 42%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.28
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/209330">A Valley Without Wind</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Procedurally Generated</span>
+      
+        <span class="tag">Open World</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Metroidvania</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">Steam Trading Cards</span>
+      
+    </div>
+  </td>
+  <td>2.1 years ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>14.17 hours</td>
+  <td class="hidden">121.7 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">18.2 hours</td>
+  <td class="hidden">7.58 hours</td>
+  <td>0.95 hours/$</td>
+  <td class="hidden">98</td>
+  <td class="hidden">60</td>
+  <td>158</td>
+  <td>54</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 62%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.74
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/228320">A Valley Without Wind 2</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Procedurally Generated</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">cross-genre</span>
+      
+        <span class="tag">Co-op</span>
+      
+        <span class="tag">Sci-fi</span>
+      
+    </div>
+  </td>
+  <td>1.3 years ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>6.97 hours</td>
+  <td class="hidden">60.7 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">10.92 hours</td>
+  <td class="hidden">2.81 hours</td>
+  <td>0.46 hours/$</td>
+  <td class="hidden">38</td>
+  <td class="hidden">36</td>
+  <td>74</td>
+  <td>68</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 51%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.9
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/207650">A Virus Named TOM</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Puzzle</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Local Co-Op</span>
+      
+        <span class="tag">Steam Trading Cards</span>
+      
+        <span class="tag">Local Multiplayer</span>
+      
+        <span class="tag">Co-op</span>
+      
+        <span class="tag">Linux</span>
+      
+        <span class="tag">Couch Co-Op</span>
+      
+    </div>
+  </td>
+  <td>1.8 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>4.57 hours</td>
+  <td class="hidden">87.2 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">6.61 hours</td>
+  <td class="hidden">1.67 hours</td>
+  <td>0.46 hours/$</td>
+  <td class="hidden">128</td>
+  <td class="hidden">90</td>
+  <td>218</td>
+  <td>65</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 58%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.49
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/248730">A Walk in the Dark</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Difficult</span>
+      
+    </div>
+  </td>
+  <td>6 months ago </td>
+  <td>
+    
+      $6.99
+    
+  </td>
+  <td>3.95 hours</td>
+  <td class="hidden">30.1 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">4.04 hours</td>
+  <td class="hidden">3.52 hours</td>
+  <td>0.57 hours/$</td>
+  <td class="hidden">62</td>
+  <td class="hidden">13</td>
+  <td>75</td>
+  <td>67</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 82%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.55
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/264460">A-Men</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Adventure</span>
+      
+    </div>
+  </td>
+  <td>3 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>1.62 hours</td>
+  <td class="hidden">3.1 hours</td>
+  <td class="hidden">0.3 hours</td>
+  <td class="hidden">1.7 hours</td>
+  <td class="hidden">1.58 hours</td>
+  <td>0.16 hours/$</td>
+  <td class="hidden">2</td>
+  <td class="hidden">4</td>
+  <td>6</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 33%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.19
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/249930">A-Train 8</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Trains</span>
+      
+    </div>
+  </td>
+  <td>8 months ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>10.89 hours</td>
+  <td class="hidden">69.9 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">28.6 hours</td>
+  <td class="hidden">0.26 hours</td>
+  <td>0.54 hours/$</td>
+  <td class="hidden">3</td>
+  <td class="hidden">5</td>
+  <td>8</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 37%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.3
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/46200">A.I.M. Racing</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Racing</span>
+      
+        <span class="tag">Action</span>
+      
+    </div>
+  </td>
+  <td>4.3 years ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>4.11 hours</td>
+  <td class="hidden">21.7 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">6.98 hours</td>
+  <td class="hidden">0.52 hours</td>
+  <td>0.82 hours/$</td>
+  <td class="hidden">5</td>
+  <td class="hidden">4</td>
+  <td>9</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 55%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.9
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/92300">A.R.E.S.: Extinction Agenda</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Side Scroller</span>
+      
+        <span class="tag">Platform Shooter</span>
+      
+        <span class="tag">Steam Trading Cards</span>
+      
+        <span class="tag">Short</span>
+      
+        <span class="tag">Robots</span>
+      
+        <span class="tag">Science Fiction</span>
+      
+        <span class="tag">Action Platformer</span>
+      
+    </div>
+  </td>
+  <td>3.3 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>8.23 hours</td>
+  <td class="hidden">644.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">10.11 hours</td>
+  <td class="hidden">3.57 hours</td>
+  <td>0.82 hours/$</td>
+  <td class="hidden">195</td>
+  <td class="hidden">79</td>
+  <td>274</td>
+  <td>68</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 71%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    4.23
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/102700">A.V.A - Alliance of Valiant Arms</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+    </div>
+  </td>
+  <td>2.9 years ago </td>
+  <td>
+    
+      Free
+    
+  </td>
+  <td>52.98 hours</td>
+  <td class="hidden">963.9 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">59.2 hours</td>
+  <td class="hidden">36.63 hours</td>
+  <td>N/A</td>
+  <td class="hidden">728</td>
+  <td class="hidden">277</td>
+  <td>1005+</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 72%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.74
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/15520">AaAaAA!!! - A Reckless Disregard for Gravity</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Sports</span>
+      
+        <span class="tag">First-Person</span>
+      
+        <span class="tag">Falling</span>
+      
+        <span class="tag">Score Attack</span>
+      
+        <span class="tag">Base jumping</span>
+      
+        <span class="tag">Reflexes</span>
+      
+        <span class="tag">Suicide</span>
+      
+        <span class="tag">Dystopian </span>
+      
+    </div>
+  </td>
+  <td>4.7 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>5.29 hours</td>
+  <td class="hidden">125.4 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.75 hours</td>
+  <td class="hidden">2.41 hours</td>
+  <td>0.53 hours/$</td>
+  <td class="hidden">232</td>
+  <td class="hidden">37</td>
+  <td>269</td>
+  <td>81</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 86%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.03
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/15560">AaaaaAAaaaAAAaaAAAAaAAAAA!!! for the Awesome</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">First-Person</span>
+      
+        <span class="tag">Sports</span>
+      
+        <span class="tag">Oculus Rift</span>
+      
+        <span class="tag">Falling</span>
+      
+        <span class="tag">Score Attack</span>
+      
+        <span class="tag">VR Support</span>
+      
+        <span class="tag">Reflexes</span>
+      
+        <span class="tag">Funny</span>
+      
+    </div>
+  </td>
+  <td>2.5 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>3.54 hours</td>
+  <td class="hidden">46.2 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">3.89 hours</td>
+  <td class="hidden">0.65 hours</td>
+  <td>0.35 hours/$</td>
+  <td class="hidden">197</td>
+  <td class="hidden">24</td>
+  <td>221</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 89%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/222640">Aarklash: Legacy</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Tactical</span>
+      
+        <span class="tag">Fantasy</span>
+      
+        <span class="tag">Real-Time with Pause</span>
+      
+    </div>
+  </td>
+  <td>8 months ago </td>
+  <td>
+    
+      $20.99
+    
+  </td>
+  <td>17.04 hours</td>
+  <td class="hidden">49 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">17.54 hours</td>
+  <td class="hidden">11.65 hours</td>
+  <td>0.81 hours/$</td>
+  <td class="hidden">65</td>
+  <td class="hidden">6</td>
+  <td>71</td>
+  <td>72</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 91%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.21
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/279480">Abalone</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Boardgame</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>8.5 hours</td>
+  <td class="hidden">8.5 hours</td>
+  <td class="hidden">8.5 hours</td>
+  <td class="hidden">8.5 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>1.7 hours/$</td>
+  <td class="hidden">1</td>
+  <td class="hidden">0</td>
+  <td>1</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 100%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/284710">Abyss: The Wraiths of Eden</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Hidden Object</span>
+      
+        <span class="tag">Puzzle</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $7.99
+    
+  </td>
+  <td>7.63 hours</td>
+  <td class="hidden">12.6 hours</td>
+  <td class="hidden">4.6 hours</td>
+  <td class="hidden">7.63 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>0.95 hours/$</td>
+  <td class="hidden">7</td>
+  <td class="hidden">0</td>
+  <td>7</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 100%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.06
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/228400">Ace Combat Assault Horizon - Enhanced Edition</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Quick-Time Events</span>
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Cinematic</span>
+      
+        <span class="tag">Arcade jetfight</span>
+      
+        <span class="tag">Flight</span>
+      
+        <span class="tag">Controller</span>
+      
+        <span class="tag">Arcade</span>
+      
+        <span class="tag">Flight Sim</span>
+      
+        <span class="tag">Action packed</span>
+      
+    </div>
+  </td>
+  <td>1.3 years ago </td>
+  <td>
+    
+      $29.99
+    
+  </td>
+  <td>9.26 hours</td>
+  <td class="hidden">193.9 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">14.27 hours</td>
+  <td class="hidden">3.65 hours</td>
+  <td>0.31 hours/$</td>
+  <td class="hidden">238</td>
+  <td class="hidden">213</td>
+  <td>451</td>
+  <td>77</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 52%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.18
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/224540">Ace of Spades: Battle Builder</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">FPS</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Block Based</span>
+      
+        <span class="tag">Building</span>
+      
+        <span class="tag">Shooter</span>
+      
+        <span class="tag">Sandbox</span>
+      
+        <span class="tag">Voxel</span>
+      
+        <span class="tag">Zombies</span>
+      
+    </div>
+  </td>
+  <td>1.4 years ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>31.19 hours</td>
+  <td class="hidden">749 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">44.52 hours</td>
+  <td class="hidden">14.59 hours</td>
+  <td>2.08 hours/$</td>
+  <td class="hidden">559</td>
+  <td class="hidden">449</td>
+  <td>1008+</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 55%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.68
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/10120">Aces of the Galaxy™</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+    </div>
+  </td>
+  <td>4.8 years ago </td>
+  <td>
+    
+      <span class="strike">$9.99</span> $4.99
+    
+  </td>
+  <td>1.2 hours</td>
+  <td class="hidden">1.3 hours</td>
+  <td class="hidden">1.1 hours</td>
+  <td class="hidden">1.2 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>0.24 hours/$</td>
+  <td class="hidden">3</td>
+  <td class="hidden">0</td>
+  <td>3</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 100%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/269230">Aces Wild: Manic Brawling Action!</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Beat'em Up</span>
+      
+        <span class="tag">Brawler</span>
+      
+        <span class="tag">Great Soundtrack</span>
+      
+        <span class="tag">Controller</span>
+      
+    </div>
+  </td>
+  <td>3 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>5.46 hours</td>
+  <td class="hidden">39.8 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.54 hours</td>
+  <td class="hidden">2 hours</td>
+  <td>0.55 hours/$</td>
+  <td class="hidden">94</td>
+  <td class="hidden">2</td>
+  <td>96</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 97%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.46
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/109700">Achron</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Time Travel</span>
+      
+        <span class="tag">Time Manipulation</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">RTS</span>
+      
+        <span class="tag">Innovative</span>
+      
+        <span class="tag">Time</span>
+      
+        <span class="tag">Sci-fi</span>
+      
+        <span class="tag">Moddable</span>
+      
+    </div>
+  </td>
+  <td>2.7 years ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>16.46 hours</td>
+  <td class="hidden">177.3 hours</td>
+  <td class="hidden">0.6 hours</td>
+  <td class="hidden">20.78 hours</td>
+  <td class="hidden">5.96 hours</td>
+  <td>0.82 hours/$</td>
+  <td class="hidden">17</td>
+  <td class="hidden">7</td>
+  <td>24</td>
+  <td>54</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 70%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.37
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/2710">Act of War: Direct Action</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">RTS</span>
+      
+        <span class="tag">Strategy</span>
+      
+    </div>
+  </td>
+  <td>6.2 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>8.72 hours</td>
+  <td class="hidden">56 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">12.74 hours</td>
+  <td class="hidden">2.02 hours</td>
+  <td>0.87 hours/$</td>
+  <td class="hidden">10</td>
+  <td class="hidden">6</td>
+  <td>16</td>
+  <td>82</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 62%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.93
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/9760">Act of War: High Treason</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">RTS</span>
+      
+        <span class="tag">Strategy</span>
+      
+    </div>
+  </td>
+  <td>6.2 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>5.07 hours</td>
+  <td class="hidden">20.4 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">7.87 hours</td>
+  <td class="hidden">0.88 hours</td>
+  <td>0.51 hours/$</td>
+  <td class="hidden">6</td>
+  <td class="hidden">4</td>
+  <td>10</td>
+  <td>74</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 60%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.51
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/288040">Actual Sunlight</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Depression</span>
+      
+        <span class="tag">RPGMaker</span>
+      
+        <span class="tag">Dark</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>1.6 hours</td>
+  <td class="hidden">12 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">1.62 hours</td>
+  <td class="hidden">1.32 hours</td>
+  <td>0.32 hours/$</td>
+  <td class="hidden">62</td>
+  <td class="hidden">6</td>
+  <td>68</td>
+  <td>77</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 91%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.4
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/108100">Adam's Venture Episode 1: The Search For The Lost Garden</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Puzzle</span>
+      
+    </div>
+  </td>
+  <td>2.2 years ago </td>
+  <td>
+    
+      <span class="strike">$4.99</span> $1.49
+    
+  </td>
+  <td>3.32 hours</td>
+  <td class="hidden">27.6 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">4.42 hours</td>
+  <td class="hidden">2.29 hours</td>
+  <td>2.23 hours/$</td>
+  <td class="hidden">18</td>
+  <td class="hidden">19</td>
+  <td>37</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 48%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.64
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/210390">Adam's Venture Episode 2: Solomon's Secret</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Indie</span>
+      
+    </div>
+  </td>
+  <td>1.9 years ago </td>
+  <td>
+    
+      <span class="strike">$4.99</span> $1.49
+    
+  </td>
+  <td>3.01 hours</td>
+  <td class="hidden">6 hours</td>
+  <td class="hidden">1.1 hours</td>
+  <td class="hidden">2.93 hours</td>
+  <td class="hidden">3.2 hours</td>
+  <td>2.02 hours/$</td>
+  <td class="hidden">10</td>
+  <td class="hidden">4</td>
+  <td>14</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 71%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.08
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/214310">Adam's Venture Episode 3: Revelations</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Indie</span>
+      
+    </div>
+  </td>
+  <td>1.9 years ago </td>
+  <td>
+    
+      <span class="strike">$4.99</span> $1.49
+    
+  </td>
+  <td>2.33 hours</td>
+  <td class="hidden">5.7 hours</td>
+  <td class="hidden">0.6 hours</td>
+  <td class="hidden">2.6 hours</td>
+  <td class="hidden">1.53 hours</td>
+  <td>1.56 hours/$</td>
+  <td class="hidden">9</td>
+  <td class="hidden">3</td>
+  <td>12</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 75%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.18
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/3800">Advent Rising</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Underrated</span>
+      
+        <span class="tag">Orson Scott Card</span>
+      
+    </div>
+  </td>
+  <td>7.7 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>6.85 hours</td>
+  <td class="hidden">33.4 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">6.85 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>0.69 hours/$</td>
+  <td class="hidden">22</td>
+  <td class="hidden">0</td>
+  <td>22</td>
+  <td>70</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 100%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.49
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/256050">Adventure Park</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Strategy</span>
+      
+    </div>
+  </td>
+  <td>6 months ago </td>
+  <td>
+    
+      $29.99
+    
+  </td>
+  <td>4.78 hours</td>
+  <td class="hidden">51.4 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">3.2 hours</td>
+  <td class="hidden">4.95 hours</td>
+  <td>0.16 hours/$</td>
+  <td class="hidden">4</td>
+  <td class="hidden">36</td>
+  <td>40</td>
+  <td>49</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 10%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.03
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/243560">Adventure Time:  Explore the Dungeon Because I DON’T KNOW!</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Dungeon Crawler</span>
+      
+        <span class="tag">adventure time</span>
+      
+        <span class="tag">Cartoon Network</span>
+      
+        <span class="tag">Local Co-Op</span>
+      
+    </div>
+  </td>
+  <td>6 months ago </td>
+  <td>
+    
+      $39.99
+    
+  </td>
+  <td>7.57 hours</td>
+  <td class="hidden">85.7 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">6.52 hours</td>
+  <td class="hidden">8.48 hours</td>
+  <td>0.19 hours/$</td>
+  <td class="hidden">28</td>
+  <td class="hidden">32</td>
+  <td>60</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 46%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.95
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/258590">Adventure Time: Finn and Jake's Epic Quest</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Mathematical</span>
+      
+        <span class="tag">adventure time</span>
+      
+        <span class="tag">Time</span>
+      
+        <span class="tag">Cartoon Network</span>
+      
+        <span class="tag">Finn</span>
+      
+        <span class="tag">Jake</span>
+      
+        <span class="tag">Cartoon</span>
+      
+        <span class="tag">Algebraic</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>5.48 hours</td>
+  <td class="hidden">199.5 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">6.48 hours</td>
+  <td class="hidden">2.14 hours</td>
+  <td>0.55 hours/$</td>
+  <td class="hidden">97</td>
+  <td class="hidden">29</td>
+  <td>126</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 76%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    2.41
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/280320">Adventurer Manager</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Pixel Graphics</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>12.85 hours</td>
+  <td class="hidden">53.6 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">15.73 hours</td>
+  <td class="hidden">6.74 hours</td>
+  <td>2.58 hours/$</td>
+  <td class="hidden">17</td>
+  <td class="hidden">8</td>
+  <td>25</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 68%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.6
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/211440">Adventures of Shuggy</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Platformer</span>
+      
+        <span class="tag">Puzzle-Platformer</span>
+      
+        <span class="tag">Local Co-Op</span>
+      
+        <span class="tag">Time Manipulation</span>
+      
+        <span class="tag">Co-op</span>
+      
+        <span class="tag">Local Multiplayer</span>
+      
+    </div>
+  </td>
+  <td>1.9 years ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>11.1 hours</td>
+  <td class="hidden">538.1 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">12.22 hours</td>
+  <td class="hidden">1.71 hours</td>
+  <td>2.22 hours/$</td>
+  <td class="hidden">92</td>
+  <td class="hidden">11</td>
+  <td>103</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 89%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    3.83
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/247830">Aerena - Clash of Champions</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Free to Play</span>
+      
+        <span class="tag">Turn-based</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Steampunk</span>
+      
+        <span class="tag">PvP</span>
+      
+        <span class="tag">Turn-based Strategy</span>
+      
+    </div>
+  </td>
+  <td>7 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>16.64 hours</td>
+  <td class="hidden">314.7 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">19.18 hours</td>
+  <td class="hidden">1.23 hours</td>
+  <td>1.67 hours/$</td>
+  <td class="hidden">73</td>
+  <td class="hidden">12</td>
+  <td>85</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 85%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.88
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/214130">aerofly FS</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Flight Simulation</span>
+      
+    </div>
+  </td>
+  <td>1.6 years ago </td>
+  <td>
+    
+      $39.99
+    
+  </td>
+  <td>13.45 hours</td>
+  <td class="hidden">120.9 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">14.75 hours</td>
+  <td class="hidden">8.55 hours</td>
+  <td>0.34 hours/$</td>
+  <td class="hidden">15</td>
+  <td class="hidden">4</td>
+  <td>19</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 78%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.23
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/238170">Afterfall Insanity -  Dirty Arena Edition</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+    </div>
+  </td>
+  <td>1 years ago </td>
+  <td>
+    
+      $0.99
+    
+  </td>
+  <td>0.57 hours</td>
+  <td class="hidden">16.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">1.07 hours</td>
+  <td class="hidden">0.38 hours</td>
+  <td>0.58 hours/$</td>
+  <td class="hidden">23</td>
+  <td class="hidden">60</td>
+  <td>83</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 27%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    2.32
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/224420">Afterfall Insanity Extended Edition</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+    </div>
+  </td>
+  <td>1.5 years ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>8.29 hours</td>
+  <td class="hidden">103.2 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">9.33 hours</td>
+  <td class="hidden">6.8 hours</td>
+  <td>1.66 hours/$</td>
+  <td class="hidden">125</td>
+  <td class="hidden">87</td>
+  <td>212</td>
+  <td>50</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 58%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.56
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/237890">Agarest: Generations of War</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">JRPG</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Turn-based</span>
+      
+        <span class="tag">Anime</span>
+      
+        <span class="tag">Japanese</span>
+      
+        <span class="tag">Fantasy</span>
+      
+        <span class="tag">SRPG</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Anime Dating Championship</span>
+      
+    </div>
+  </td>
+  <td>3 months ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>41.44 hours</td>
+  <td class="hidden">465.9 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">46.13 hours</td>
+  <td class="hidden">22.4 hours</td>
+  <td>2.76 hours/$</td>
+  <td class="hidden">414</td>
+  <td class="hidden">102</td>
+  <td>516</td>
+  <td>51</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 80%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.81
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/260130">Agarest: Generations of War Zero</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Kawaii</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">JRPG</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Anime</span>
+      
+        <span class="tag">Japanese</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Turn-based</span>
+      
+        <span class="tag">Turn-based Strategy</span>
+      
+        <span class="tag">SRPG</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>26.88 hours</td>
+  <td class="hidden">393.1 hours</td>
+  <td class="hidden">1 hours</td>
+  <td class="hidden">28.89 hours</td>
+  <td class="hidden">13.62 hours</td>
+  <td>1.34 hours/$</td>
+  <td class="hidden">33</td>
+  <td class="hidden">5</td>
+  <td>38</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 86%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.52
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/21600">Age of Booty™</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Pirates</span>
+      
+    </div>
+  </td>
+  <td>5.2 years ago </td>
+  <td>
+    
+      $4.99
+    
+  </td>
+  <td>2.34 hours</td>
+  <td class="hidden">14.7 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.34 hours</td>
+  <td class="hidden">1.07 hours</td>
+  <td>0.47 hours/$</td>
+  <td class="hidden">8</td>
+  <td class="hidden">19</td>
+  <td>27</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 29%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.92
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/218170">Age of Conan: Unchained</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Free to Play</span>
+      
+        <span class="tag">Massively Multiplayer</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Nudity</span>
+      
+        <span class="tag">MMORPG</span>
+      
+    </div>
+  </td>
+  <td>1.2 years ago </td>
+  <td>
+    
+      Free
+    
+  </td>
+  <td>54.21 hours</td>
+  <td class="hidden">667.5 hours</td>
+  <td class="hidden">0.4 hours</td>
+  <td class="hidden">72.65 hours</td>
+  <td class="hidden">10.22 hours</td>
+  <td>N/A</td>
+  <td class="hidden">62</td>
+  <td class="hidden">26</td>
+  <td>88</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 70%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.43
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/221380">Age of Empires II HD</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">RTS</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Wololo</span>
+      
+        <span class="tag">Classic</span>
+      
+        <span class="tag">Medieval</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Enhanced Re-Release</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">Online Multiplayer</span>
+      
+        <span class="tag">Selling free mods as DLC</span>
+      
+    </div>
+  </td>
+  <td>1.1 years ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>52.74 hours</td>
+  <td class="hidden">967.8 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">52.42 hours</td>
+  <td class="hidden">55.54 hours</td>
+  <td>2.64 hours/$</td>
+  <td class="hidden">900</td>
+  <td class="hidden">100</td>
+  <td>1000+</td>
+  <td>68</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 90%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.02
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/105450">Age of Empires® III: Complete Collection</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">RTS</span>
+      
+        <span class="tag">Historic</span>
+      
+        <span class="tag">Resource Management</span>
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Base-Building</span>
+      
+        <span class="tag">Real-Time</span>
+      
+        <span class="tag">Campaign</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+    </div>
+  </td>
+  <td>2.4 years ago </td>
+  <td>
+    
+      $39.99
+    
+  </td>
+  <td>53.01 hours</td>
+  <td class="hidden">815.3 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">56.48 hours</td>
+  <td class="hidden">15.66 hours</td>
+  <td>1.33 hours/$</td>
+  <td class="hidden">688</td>
+  <td class="hidden">64</td>
+  <td>752</td>
+  <td>81</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 91%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.04
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/61500">Age of Wonders</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Turn-based</span>
+      
+        <span class="tag">Turn-based Strategy</span>
+      
+        <span class="tag">Fantasy</span>
+      
+        <span class="tag">Classic</span>
+      
+    </div>
+  </td>
+  <td>3.6 years ago </td>
+  <td>
+    
+      $5.99
+    
+  </td>
+  <td>23.88 hours</td>
+  <td class="hidden">103.5 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">24.23 hours</td>
+  <td class="hidden">12.6 hours</td>
+  <td>3.99 hours/$</td>
+  <td class="hidden">32</td>
+  <td class="hidden">1</td>
+  <td>33</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 96%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.51
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/61510">Age of Wonders II: The Wizard's Throne</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Turn-based</span>
+      
+        <span class="tag">Fantasy</span>
+      
+        <span class="tag">Turn-based Strategy</span>
+      
+    </div>
+  </td>
+  <td>3.6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>21.12 hours</td>
+  <td class="hidden">100.6 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">17.16 hours</td>
+  <td class="hidden">28.05 hours</td>
+  <td>2.11 hours/$</td>
+  <td class="hidden">7</td>
+  <td class="hidden">4</td>
+  <td>11</td>
+  <td>86</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 63%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.73
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/226840">Age of Wonders III</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Fantasy</span>
+      
+        <span class="tag">Turn-based Strategy</span>
+      
+        <span class="tag">Turn-based</span>
+      
+        <span class="tag">4X</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">One More Turn</span>
+      
+        <span class="tag">Tactical</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $39.99
+    
+  </td>
+  <td>37.08 hours</td>
+  <td class="hidden">292.8 hours</td>
+  <td class="hidden">0.3 hours</td>
+  <td class="hidden">40.85 hours</td>
+  <td class="hidden">21.92 hours</td>
+  <td>0.93 hours/$</td>
+  <td class="hidden">302</td>
+  <td class="hidden">75</td>
+  <td>377</td>
+  <td>80</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 80%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.46
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/61520">Age of Wonders Shadow Magic</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Turn-based Strategy</span>
+      
+        <span class="tag">Fantasy</span>
+      
+        <span class="tag">Turn-based</span>
+      
+        <span class="tag">One More Turn</span>
+      
+        <span class="tag">4X</span>
+      
+        <span class="tag">Masterpiece</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+    </div>
+  </td>
+  <td>3.6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>43.76 hours</td>
+  <td class="hidden">457.3 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">45.92 hours</td>
+  <td class="hidden">0.7 hours</td>
+  <td>4.38 hours/$</td>
+  <td class="hidden">40</td>
+  <td class="hidden">2</td>
+  <td>42</td>
+  <td>82</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 95%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.97
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/265650">Age Of Wushu</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Free to Play</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Massively Multiplayer</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">MMO</span>
+      
+        <span class="tag">Jet Li</span>
+      
+        <span class="tag">Martial Arts</span>
+      
+        <span class="tag">PvP</span>
+      
+        <span class="tag">MMORPG</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      Free
+    
+  </td>
+  <td>17.79 hours</td>
+  <td class="hidden">299.9 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">28.85 hours</td>
+  <td class="hidden">10.51 hours</td>
+  <td>N/A</td>
+  <td class="hidden">27</td>
+  <td class="hidden">41</td>
+  <td>68</td>
+  <td>74</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 39%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.9
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/289580">Aggression: Europe Under Fire</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+    </div>
+  </td>
+  <td>1 month ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>8.83 hours</td>
+  <td class="hidden">14.8 hours</td>
+  <td class="hidden">2.1 hours</td>
+  <td class="hidden">9.55 hours</td>
+  <td class="hidden">7.4 hours</td>
+  <td>0.88 hours/$</td>
+  <td class="hidden">4</td>
+  <td class="hidden">2</td>
+  <td>6</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 66%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.11
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/92900">Agricultural Simulator 2011: Extended Edition</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Shakespearean</span>
+      
+        <span class="tag">Farming</span>
+      
+        <span class="tag">Fun</span>
+      
+    </div>
+  </td>
+  <td>3.2 years ago </td>
+  <td>
+    
+      $6.99
+    
+  </td>
+  <td>11.26 hours</td>
+  <td class="hidden">136.1 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">12.71 hours</td>
+  <td class="hidden">9.22 hours</td>
+  <td>1.61 hours/$</td>
+  <td class="hidden">31</td>
+  <td class="hidden">22</td>
+  <td>53</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 58%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.78
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/236790">Agricultural Simulator 2013 - Steam Edition</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Casual</span>
+      
+        <span class="tag">Farming</span>
+      
+        <span class="tag">Hardcore</span>
+      
+    </div>
+  </td>
+  <td>11 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>15.84 hours</td>
+  <td class="hidden">229.9 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">18.1 hours</td>
+  <td class="hidden">14.79 hours</td>
+  <td>1.59 hours/$</td>
+  <td class="hidden">45</td>
+  <td class="hidden">97</td>
+  <td>142</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 31%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.68
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/259890">Agricultural Simulator: Historical Farming</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Farming</span>
+      
+    </div>
+  </td>
+  <td>6 months ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>2.51 hours</td>
+  <td class="hidden">73.8 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">6.27 hours</td>
+  <td class="hidden">0.48 hours</td>
+  <td>0.17 hours/$</td>
+  <td class="hidden">14</td>
+  <td class="hidden">26</td>
+  <td>40</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 35%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    3.69
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/40400">AI War: Fleet Command</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">RTS</span>
+      
+        <span class="tag">Space</span>
+      
+        <span class="tag">Co-op</span>
+      
+        <span class="tag">Grand Strategy</span>
+      
+        <span class="tag">Complex</span>
+      
+        <span class="tag">4X</span>
+      
+        <span class="tag">Difficult</span>
+      
+        <span class="tag">Great Soundtrack</span>
+      
+    </div>
+  </td>
+  <td>4.6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>80.29 hours</td>
+  <td class="hidden">846.8 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">86.39 hours</td>
+  <td class="hidden">1.42 hours</td>
+  <td>8.04 hours/$</td>
+  <td class="hidden">207</td>
+  <td class="hidden">16</td>
+  <td>223</td>
+  <td>80</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 92%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.84
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/214910">Air Conflicts: Pacific Carriers</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Simulation</span>
+      
+    </div>
+  </td>
+  <td>1.7 years ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>5.72 hours</td>
+  <td class="hidden">60.5 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">8.65 hours</td>
+  <td class="hidden">3.99 hours</td>
+  <td>0.29 hours/$</td>
+  <td class="hidden">33</td>
+  <td class="hidden">56</td>
+  <td>89</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 37%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.99
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/95900">Air Conflicts: Secret Wars</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">World War II</span>
+      
+    </div>
+  </td>
+  <td>2.6 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>22.44 hours</td>
+  <td class="hidden">551.7 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">29 hours</td>
+  <td class="hidden">11.06 hours</td>
+  <td>2.25 hours/$</td>
+  <td class="hidden">26</td>
+  <td class="hidden">15</td>
+  <td>41</td>
+  <td>65</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 63%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    2.95
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/233210">Air Conflicts: Vietnam</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Simulation</span>
+      
+    </div>
+  </td>
+  <td>7 months ago </td>
+  <td>
+    
+      $29.99
+    
+  </td>
+  <td>3.65 hours</td>
+  <td class="hidden">29.2 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">7.55 hours</td>
+  <td class="hidden">2.14 hours</td>
+  <td>0.12 hours/$</td>
+  <td class="hidden">12</td>
+  <td class="hidden">31</td>
+  <td>43</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 27%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.16
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/55020">Air Forte</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Educational</span>
+      
+    </div>
+  </td>
+  <td>3.7 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>0.81 hours</td>
+  <td class="hidden">4.7 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">0.87 hours</td>
+  <td class="hidden">0.73 hours</td>
+  <td>0.08 hours/$</td>
+  <td class="hidden">15</td>
+  <td class="hidden">13</td>
+  <td>28</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 53%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.55
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/223630">AirBuccaneers</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Team Based</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+    </div>
+  </td>
+  <td>1.5 years ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>11.58 hours</td>
+  <td class="hidden">294.6 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">16.27 hours</td>
+  <td class="hidden">4.15 hours</td>
+  <td>0.77 hours/$</td>
+  <td class="hidden">65</td>
+  <td class="hidden">41</td>
+  <td>106</td>
+  <td>74</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 61%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.87
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/201490">Airline Tycoon 2</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Strategy</span>
+      
+    </div>
+  </td>
+  <td>2.6 years ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>9.67 hours</td>
+  <td class="hidden">85 hours</td>
+  <td class="hidden">0.2 hours</td>
+  <td class="hidden">12.1 hours</td>
+  <td class="hidden">9.47 hours</td>
+  <td>0.48 hours/$</td>
+  <td class="hidden">4</td>
+  <td class="hidden">49</td>
+  <td>53</td>
+  <td>57</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 7%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.9
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/206500">AirMech</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Free to Play</span>
+      
+        <span class="tag">Strategy</span>
+      
+        <span class="tag">Indie</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">MOBA</span>
+      
+        <span class="tag">Multiplayer</span>
+      
+        <span class="tag">Mechs</span>
+      
+        <span class="tag">Online Co-Op</span>
+      
+        <span class="tag">Action RTS</span>
+      
+        <span class="tag">RTS</span>
+      
+    </div>
+  </td>
+  <td>1.5 years ago </td>
+  <td>
+    
+      Free
+    
+  </td>
+  <td>45.64 hours</td>
+  <td class="hidden">940.6 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">47.16 hours</td>
+  <td class="hidden">25.3 hours</td>
+  <td>N/A</td>
+  <td class="hidden">935</td>
+  <td class="hidden">70</td>
+  <td>1005+</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 93%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.53
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/267600">Airport Simulator 2014</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Simulation</span>
+      
+        <span class="tag">Management</span>
+      
+    </div>
+  </td>
+  <td>5 months ago </td>
+  <td>
+    
+      $14.99
+    
+  </td>
+  <td>6.33 hours</td>
+  <td class="hidden">174.9 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">12.48 hours</td>
+  <td class="hidden">5.49 hours</td>
+  <td>0.42 hours/$</td>
+  <td class="hidden">31</td>
+  <td class="hidden">226</td>
+  <td>257</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 12%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.44
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/230310">Akaneiro: Demon Hunters</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">RPG</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Indie</span>
+      
+    </div>
+  </td>
+  <td>11 months ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>8.8 hours</td>
+  <td class="hidden">109.6 hours</td>
+  <td class="hidden">0.1 hours</td>
+  <td class="hidden">5.74 hours</td>
+  <td class="hidden">12.35 hours</td>
+  <td>0.88 hours/$</td>
+  <td class="hidden">22</td>
+  <td class="hidden">19</td>
+  <td>41</td>
+  <td>53</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 53%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    1.29
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/108710">Alan Wake</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Third Person</span>
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Thriller</span>
+      
+        <span class="tag">Psychological Horror</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Horror</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">Story Rich</span>
+      
+        <span class="tag">Great Soundtrack</span>
+      
+        <span class="tag">Stephen King</span>
+      
+    </div>
+  </td>
+  <td>2.3 years ago </td>
+  <td>
+    
+      $29.99
+    
+  </td>
+  <td>15.16 hours</td>
+  <td class="hidden">271.4 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">16.66 hours</td>
+  <td class="hidden">6.25 hours</td>
+  <td>0.51 hours/$</td>
+  <td class="hidden">860</td>
+  <td class="hidden">144</td>
+  <td>1004+</td>
+  <td>83</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 85%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.45
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/202750">Alan Wake's American Nightmare</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Action</span>
+      
+        <span class="tag">Third Person</span>
+      
+        <span class="tag">Adventure</span>
+      
+        <span class="tag">Horror</span>
+      
+        <span class="tag">Singleplayer</span>
+      
+        <span class="tag">Thriller</span>
+      
+        <span class="tag">Third-Person Shooter</span>
+      
+        <span class="tag">Psychological Thriller</span>
+      
+        <span class="tag">Psychological Horror</span>
+      
+        <span class="tag">Arcade</span>
+      
+    </div>
+  </td>
+  <td>2 years ago </td>
+  <td>
+    
+      $9.99
+    
+  </td>
+  <td>5.35 hours</td>
+  <td class="hidden">73 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">5.72 hours</td>
+  <td class="hidden">3.91 hours</td>
+  <td>0.54 hours/$</td>
+  <td class="hidden">438</td>
+  <td class="hidden">114</td>
+  <td>552</td>
+  <td>73</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 79%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.45
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/266940">Alex Hunter - Lord of the Mind</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Casual</span>
+      
+    </div>
+  </td>
+  <td>5 months ago </td>
+  <td>
+    
+      $6.99
+    
+  </td>
+  <td>16.38 hours</td>
+  <td class="hidden">22.3 hours</td>
+  <td class="hidden">9.9 hours</td>
+  <td class="hidden">16.38 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>2.34 hours/$</td>
+  <td class="hidden">4</td>
+  <td class="hidden">0</td>
+  <td>4</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 100%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.03
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/34283">Alex Kidd™ in the Enchanted Castle</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+        <span class="tag">Japanese</span>
+      
+    </div>
+  </td>
+  <td>3.7 years ago </td>
+  <td>
+    
+      $2.99
+    
+  </td>
+  <td>-</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">0 hours</td>
+  <td>N/A</td>
+  <td class="hidden">0</td>
+  <td class="hidden">0</td>
+  <td>0</td>
+  <td>-</td>
+  <td class="reviews-distribution-cell">
+     - 
+  </td>
+  <td class="centiles">
+    -
+  </td>
+</tr>
+<tr game="">
+<td class="cropped-column">
+    <div class="column-cropper">
+      <a href="http://store.steampowered.com/app/19680">Alice: Madness Returns</a>
+    </div>
+  </td>
+  <td class="tags-cell cropped-column">
+    <div class="column-cropper">
+      
+    </div>
+  </td>
+  <td>2.9 years ago </td>
+  <td>
+    
+      $19.99
+    
+  </td>
+  <td>15.83 hours</td>
+  <td class="hidden">317 hours</td>
+  <td class="hidden">0 hours</td>
+  <td class="hidden">16.75 hours</td>
+  <td class="hidden">8.33 hours</td>
+  <td>0.79 hours/$</td>
+  <td class="hidden">896</td>
+  <td class="hidden">110</td>
+  <td>1006+</td>
+  <td>75</td>
+  <td class="reviews-distribution-cell">
+    
+    <div class="reviews-distribution">
+      <div class="positive-reviews-percentage" style="width: 89%"></div>
+    </div>
+    
+  </td>
+  <td class="centiles">
+    0.54
+  </td>
+</tr>
+</tbody>
+</table></main><script src="/assets/timeSince-306059324edf18cc1f86bc764edf22c1.js"></script><script src="/assets/shim/bind-f455e24458ec86e94944c1dc547ca0c8.js"></script><script src="/assets/shim/classList-d48cd449e0f67d80ce07c9aabaca085e.js"></script><script src="/assets/templates/array_filter-a44e34bfa19e71f90d93e1f935f7e945.js"></script><script src="/assets/templates/date_filter-2bf2c9a83dfdfa131f4de8bc334ffccf.js"></script><script src="/assets/templates/game-db9bf7bfaa56c6ca53b76060f8b6b814.js"></script><script src="/assets/templates/number_filter-6931a549e16e7fab2c7a9008d12b9cb7.js"></script><script src="/assets/templates/text_filter-7a1bfe5123333d11e5ed927979dda998.js"></script><script src="/assets/PTB-e8359a014b73fe5b0505f8e185115fa2.js"></script><script src="/assets/eventable-7ef7b8d4190909e14dc2fded3fc88462.js"></script><script src="/assets/elements-794cfc742694af36849c60a61d5aadd3.js"></script><script src="/assets/games-a362dd7e5f4eac6b1d96d063e3fe0b8e.js"></script><script src="/assets/game-bb3853c80503d2c158545ca4bc0155a1.js"></script><script src="/assets/filters-226de2f3be91838d75923a19d124515d.js"></script><script src="/assets/filters/number_filter-cd7b143c5220eb51bc7c5798a36e6530.js"></script><script src="/assets/filters/date_filter-fec94cee15a0917c2ab7b24d31a1e4d3.js"></script><script src="/assets/filters/text_filter-908d10adf086efcc83c03a8decff6d89.js"></script><script src="/assets/filters/array_filter-44069b745d1d051a1b8ab8fa1ee6288c.js"></script><script src="/assets/sorter-0d7ee1d0642d08b3c43bf0974be15e3c.js"></script><script src="/assets/app-aee17a11eaa6692c4be42151494b81b9.js"></script><script src="/assets/donate-374fd0dce31784d6071cf57dcb1ece26.js"></script>
+</body>
+</html>
