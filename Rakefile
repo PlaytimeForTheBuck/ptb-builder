@@ -42,19 +42,36 @@ namespace :site do
     File.write index_file, index_content
     puts "Added md5 summary db file name to index.html #{file_name}"
   end
+
+  desc 'Generate the _site with all the things'
+  task all: ['site:jekyll', 'site:cache', 'site:copy_md5_summary', 'site:inject_md5_summary']
 end
 
-desc 'Push the Jekyll-generated website'
-task :push_to_git do
-  system 'cd _site && git add . && git add -u'
-  system 'cd _site && git push origin master'
+namespace :git do
+  desc 'Add files to staging'
+  task :add do
+    system 'cd _site && git add . && git add -u'
+  end
+
+  desc 'Generate a commit'
+  task :commit do
+    date_string = Time.now.strftime('%Y-%m-%d %H:%M:%S')
+    system "cd _site && git commit -m 'Auto-generated site #{date_string}'"
+  end
+
+  desc 'Push to Github'
+  task :push do
+    system 'cd _site && git push origin master'
+  end
+
+  desc 'Add, commit and push to Github'
+  task all: ['git:add', 'git:commit', 'git:push']
 end
 
-desc 'Generate the _site with all the things'
-task generate_site: ['site:jekyll', 'site:cache', 'site:copy_md5_summary', 'site:inject_md5_summary']
-
-desc 'Scrap everything'
-task scrap: ['scrapper:games_list', 'scrapper:games', 'scrapper:reviews', 'scrapper:summary']
+namespace :scrapper do
+  desc 'Scrap everything'
+  task all: ['scrapper:games_list', 'scrapper:games', 'scrapper:reviews', 'scrapper:summary']
+end
 
 desc 'Scrap, build, cache, copy, commit and push!'
-task :cronjob => [:scrap, :generate_site, :push_to_git]
+task :cronjob => ['scrapper:all', 'site:all', 'git:all']

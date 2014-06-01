@@ -1,7 +1,7 @@
 PATH
   remote: ../ptb-frontend
   specs:
-    ptb_frontend (0.1.0)
+    ptb_frontend (0.1.1)
       bourbon
       coffee-script
       ejs
@@ -15,7 +15,7 @@ PATH
 PATH
   remote: ../ptb-scrapper
   specs:
-    ptb_scrapper (0.1.0)
+    ptb_scrapper (0.2.0)
       activerecord
       mail
       nokogiri
