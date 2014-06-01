@@ -18,7 +18,7 @@ class Cacher
                                 :Logger => WEBrick::Log::new("/dev/null", 7)).start
       end
     end
-    sleep 2 # I'm not sure how to check if WEBBrick already loaded. And this is probably easier.
+    sleep 1 # I'm not sure how to check if WEBBrick already loaded. And this is probably easier.
     # @thread.join
   end
   

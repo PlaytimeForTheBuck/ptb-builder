@@ -44,7 +44,7 @@ namespace :site do
   end
 
   desc 'Generate the _site with all the things'
-  task all: ['site:jekyll', 'site:cache', 'site:copy_md5_summary', 'site:inject_md5_summary']
+  task all: ['site:jekyll', 'site:copy_md5_summary', 'site:inject_md5_summary', 'site:cache']
 end
 
 namespace :git do
