@@ -54,7 +54,7 @@ desc 'Generate the _site with all the things'
 task generate_site: ['site:jekyll', 'site:cache', 'site:copy_md5_summary', 'site:inject_md5_summary']
 
 desc 'Scrap everything'
-desc scrap: ['scrapper:games_list', 'scrapper:games', 'scrapper:reviews', 'scrapper:summary']
+task scrap: ['scrapper:games_list', 'scrapper:games', 'scrapper:reviews', 'scrapper:summary']
 
 desc 'Scrap, build, cache, copy, commit and push!'
 task :cronjob => [:scrap, :generate_site, :push_to_git]
