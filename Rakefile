@@ -55,7 +55,7 @@ namespace :git do
 
   desc 'Generate a commit'
   task :commit do
-    date_string = Time.now.strftime('%Y-%m-%d %H:%M:%S')
+    date_string = Time.now.strftime('%Y-%m-%d %H:%M:%S %z')
     system "cd _site && git commit -m 'Auto-generated site #{date_string}'"
   end
 
