@@ -1,1 +1,6 @@
 _site
+log
+tmp/*
+db/*.sqlite3
+db/*.sqlite3-journal
+db/games.json
