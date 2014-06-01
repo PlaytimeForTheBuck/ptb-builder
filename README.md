@@ -1,5 +1,4 @@
-PlaytimeForTheBuck Builder
-===========
+### PlaytimeForTheBuck Builder
 
 Builder app that binds the `ptb-scrapper` and the `ptb-frontend` together and handles the automatic tasks.
 
@@ -22,7 +21,6 @@ rake site:inject_md5_summary  # Add summary file md5 to index.html
 rake site:jekyll              # Builds the front end website with Jekylls
 ```
 
-About
-===========
+### About
 
 Made by Zequez on it's free time. GPLv2 licence.
