@@ -1,7 +1,7 @@
 PlaytimeForTheBuck Builder
 ===========
 
-Builder app that binds the ptb-scrapper and the ptb-frontend together and handles the automatic tasks.
+Builder app that binds the `ptb-scrapper` and the `ptb-frontend` together and handles the automatic tasks.
 
 As it is, it requires to have the `ptb-frontend` and the `ptb-scrapper` on the parent directory, because on the Gemfile I haven't added the Git reference to pull them from here.
 
