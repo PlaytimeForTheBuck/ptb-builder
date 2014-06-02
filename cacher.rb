@@ -26,7 +26,7 @@ class Cacher
     webserver
 
     rows_container = 'tbody'
-    rows = Phantomjs.run(PHANTOM_SCRIPT, "http://localhost:#{PORT}#autorender", rows_container)
+    rows = Phantomjs.run(PHANTOM_SCRIPT, "http://localhost:#{PORT}#sortAverage_time=descending", rows_container)
     puts "Received rows from PhantomJS for page #{page}"
 
     file_name = File.join(SITE_PATH, page)
