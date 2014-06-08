@@ -4,6 +4,7 @@ require 'net/http'
 require 'webrick'
 require 'phantomjs'
 require 'nokogiri'
+require 'yaml'
 
 class Cacher
   PORT = 9999
@@ -22,26 +23,28 @@ class Cacher
     # @thread.join
   end
   
-  def save_rendered_table(page)
+  def save_rendered_page(page)
     webserver
 
-    rows_container = 'tbody'
-    rows = Phantomjs.run(PHANTOM_SCRIPT, "http://localhost:#{PORT}#sortAverageTimeOverPrice=descending", rows_container)
-    puts "Received rows from PhantomJS for page #{page}"
+    # source_file = File.open(File.join(SITE_PATH, page), 'r')
+    # doc = Nokogiri::HTML source_file.read
+    # container = doc.at_css page_container
+    # source_file.close
 
-    file_name = File.join(SITE_PATH, page)
+    Dir.glob("#{SITE_PATH}/**/index.html").each do |route_file_name|
+      relative_route_file_name = route_file_name.sub(__dir__, '')
+      route_address_match = route_file_name.match(/_site(\/.*|)\/index\.html/)[1]
+      url = "http://localhost:#{PORT}#{route_address_match}/#!"
 
-    source_file = File.open(file_name, 'r')
+      puts "Loading Phantom page #{url}"
+      page_content = Phantomjs.run(PHANTOM_SCRIPT, url)
+      puts "Received rows from PhantomJS for page #{relative_route_file_name}"
 
-    doc = Nokogiri::HTML source_file.read
-    container = doc.at_css rows_container
-    container.inner_html = rows
+      output_file = File.open(route_file_name, 'w')
+      output_file.write page_content
+      output_file.close
 
-    source_file.close
-    output_file = File.open(file_name, 'w')
-    output_file.write doc.to_html
-    output_file.close
-
-    puts 'Rendered table saved to disk'
+      puts 'Rendered page saved to disk'
+    end
   end
 end

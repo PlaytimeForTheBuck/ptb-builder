@@ -19,7 +19,7 @@ namespace :site do
        ' the table contents and saves a modified file, for the sake of SEO.'
   task :cache do
     cacher = Cacher.new
-    cacher.save_rendered_table('index.html')
+    cacher.save_rendered_page('index.html')
     puts 'Generated cached table'
   end
 
@@ -36,11 +36,12 @@ namespace :site do
   desc 'Add summary file md5 to index.html'
   task :inject_md5_summary do
     file_name = File.basename Dir.glob(File.join(SITE_PATH, 'games-*.json')).first
-    index_file = File.join SITE_PATH, 'index.html'
-    index_content = File.read(index_file)
-    index_content = index_content.gsub(/games-db=".*"/, %Q{games-db="#{file_name}"})
-    File.write index_file, index_content
-    puts "Added md5 summary db file name to index.html #{file_name}"
+    Dir.glob("#{SITE_PATH}/**/index.html").each do |index_file|
+      index_content = File.read(index_file)
+      index_content = index_content.gsub(/games-db=".*"/, %Q{games-db="#{file_name}"})
+      File.write index_file, index_content
+    end
+    puts "Added md5 summary db file name to all index.html files as #{file_name}"
   end
 
   desc 'Generate the _site with all the things'
