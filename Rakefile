@@ -1,8 +1,10 @@
 require './cacher'
 require 'fileutils'
 require 'ptb_scrapper'
+require 'active_record_migrations'
 
 PtbScrapper.load_rake_tasks
+ActiveRecordMigrations.load_tasks
 PtbScrapper.init
 
 SITE_PATH = File.expand_path './_site'

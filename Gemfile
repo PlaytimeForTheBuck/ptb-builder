@@ -6,3 +6,5 @@ gem 'nokogiri'
 gem 'rake'
 gem 'ptb_frontend', path: '../ptb-frontend'
 gem 'ptb_scrapper', path: '../ptb-scrapper'
+
+gem 'active_record_migrations'
