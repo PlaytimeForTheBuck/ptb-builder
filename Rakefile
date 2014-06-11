@@ -46,6 +46,17 @@ namespace :site do
     puts "Added md5 summary db file name to all index.html files as #{file_name}"
   end
 
+  desc 'Serve the local website'
+  task :serve do
+    Thread.new do
+      WEBrick::HTTPServer.new(:Port => 9999, 
+                              :DocumentRoot => SITE_PATH,
+                              :AccessLog => []).start
+    end
+
+    sleep 1 while true
+  end
+
   desc 'Generate the _site with all the things'
   task all: ['site:jekyll', 'site:copy_md5_summary', 'site:inject_md5_summary', 'site:cache']
 end
