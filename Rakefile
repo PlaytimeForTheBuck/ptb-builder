@@ -49,7 +49,7 @@ namespace :site do
   desc 'Serve the local website'
   task :serve do
     Thread.new do
-      WEBrick::HTTPServer.new(:Port => 9999, 
+      WEBrick::HTTPServer.new(:Port => 9999,
                               :DocumentRoot => SITE_PATH,
                               :AccessLog => []).start
     end
