@@ -2,7 +2,6 @@ require 'rubygems'
 require 'bundler/setup'
 require 'net/http'
 require 'webrick'
-require 'phantomjs'
 require 'nokogiri'
 require 'yaml'
 
@@ -15,14 +14,13 @@ class Cacher
       Thread.new do
         WEBrick::HTTPServer.new(:Port => PORT, 
                                 :DocumentRoot => SITE_PATH,
-                                :AccessLog => [],
-                                :Logger => WEBrick::Log::new("/dev/null", 7)).start
+                                :AccessLog => []).start
       end
     end
     sleep 1 # I'm not sure how to check if WEBBrick already loaded. And this is probably easier.
     # @thread.join
   end
-  
+
   def save_rendered_page(page)
     webserver
 
@@ -37,9 +35,8 @@ class Cacher
       url = "http://localhost:#{PORT}#{route_address_match}/#!"
 
       puts "Loading Phantom page #{url}"
-      page_content = Phantomjs.run(PHANTOM_SCRIPT, url)
+      page_content = `phantomjs cacher.coffee #{url}`
       puts "Received rows from PhantomJS for page #{relative_route_file_name}"
-
       output_file = File.open(route_file_name, 'w')
       output_file.write page_content
       output_file.close

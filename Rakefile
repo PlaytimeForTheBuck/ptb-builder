@@ -14,7 +14,7 @@ namespace :site do
   task :jekyll do
     frontend_path = Gem.loaded_specs['ptb_frontend'].full_gem_path
     config_file = File.join frontend_path, '_config_deployment.yml'
-    system "jekyll build -s #{frontend_path} -d #{SITE_PATH} --config #{config_file}"
+    system "jekyll build -s #{frontend_path} -d #{SITE_PATH} --config #{config_file} --trace"
   end
 
   desc 'Renders the app on a headless browser and extract' +
@@ -64,13 +64,13 @@ end
 namespace :git do
   desc 'Add files to staging'
   task :add do
-    system 'cd _site && git add . && git add -u'
+    system 'cd _site && git add -A && git add -u'
   end
 
   desc 'Generate a commit'
   task :commit do
     date_string = Time.now.strftime('%Y-%m-%d %H:%M:%S %z')
-    system "cd _site && git commit -m 'Auto-generated site #{date_string}'"
+    system "cd _site && git commit -m \"Auto-generated site #{date_string}\""
   end
 
   desc 'Push to Github'
