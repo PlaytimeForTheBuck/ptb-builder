@@ -62,29 +62,40 @@ namespace :site do
 end
 
 namespace :git do
+  desc 'Restart _site .git'
+  task :restart do
+    puts `rm -rf ./_site/.git`
+    puts `cd _site && git init . && git remote add origin https://github.com/PlaytimeForTheBuck/playtimeforthebuck.github.io.git`
+  end
+
   desc 'Add files to staging'
   task :add do
-    system 'cd _site && git add -A && git add -u'
+    puts `cd _site && git add -A && git add -u`
   end
 
   desc 'Generate a commit'
   task :commit do
     date_string = Time.now.strftime('%Y-%m-%d %H:%M:%S %z')
-    system "cd _site && git commit -m \"Auto-generated site #{date_string}\""
+    puts `cd _site && git commit -m \"Auto-generated site #{date_string}\"`
   end
 
   desc 'Push to Github'
   task :push do
-    system 'cd _site && git push origin master'
+    puts `cd _site && git push origin master -f`
   end
 
-  desc 'Add, commit and push to Github'
-  task all: ['git:add', 'git:commit', 'git:push']
+  desc 'Retart, add, commit and push to Github'
+  task all: ['git:restart', 'git:add', 'git:commit', 'git:push']
 end
 
 namespace :scrapper do
   desc 'Scrap everything'
-  task all: ['scrapper:games_list', 'scrapper:games', 'scrapper:reviews', 'scrapper:summary']
+  task all: ['scrapper:games_on_sale_list', 'scrapper:games', 'scrapper:reviews', 'scrapper:summary']
+end
+
+desc 'something'
+task :yes do
+  raise 'Potato'
 end
 
 desc 'Scrap, build, cache, copy, commit and push!'
