@@ -1,3 +1,9 @@
+## ⚠️ Deprecated ⚠️
+
+Inspired by the essence of this project I created [GGFilter.com](http://ggfilter.com/), which has similar goals of helping you find games, but with a greater scope and infrastructure.
+
+---
+
 ### PlaytimeForTheBuck Builder
 
 Builder app that binds the `ptb-scrapper` and the `ptb-frontend` together and handles the automatic tasks.
